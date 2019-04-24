@@ -4,17 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9A50D687-3676-4E87-9831-8D7D73B4FD16}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>ReceiptPrinter</RootNamespace>
-    <AssemblyName>ReceiptPrinter</AssemblyName>
+    <ProjectGuid>{043DC04A-F832-40F4-87A2-84EBAF23DA88}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ReceiptPrinter.Common</RootNamespace>
+    <AssemblyName>ReceiptPrinter.Common</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,15 +21,16 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>7.1</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>7.1</LangVersion>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -43,24 +43,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="eProductType.cs" />
+    <Compile Include="ITaxService.cs" />
+    <Compile Include="LineItem.cs" />
+    <Compile Include="Order.cs" />
+    <Compile Include="Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="sampledata.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ReceiptPrinter.Common\ReceiptPrinter.Common.csproj">
-      <Project>{043dc04a-f832-40f4-87a2-84ebaf23da88}</Project>
-      <Name>ReceiptPrinter.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\TaxServices\TaxServices.csproj">
-      <Project>{581525e7-5e6f-41f6-b5b5-6d396d556fd9}</Project>
-      <Name>TaxServices</Name>
-    </ProjectReference>
+    <Compile Include="TheReceiptPrinter.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

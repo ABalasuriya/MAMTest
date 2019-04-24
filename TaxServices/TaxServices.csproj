@@ -4,17 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9A50D687-3676-4E87-9831-8D7D73B4FD16}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>ReceiptPrinter</RootNamespace>
-    <AssemblyName>ReceiptPrinter</AssemblyName>
+    <ProjectGuid>{581525E7-5E6F-41F6-B5B5-6D396D556FD9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TaxServices</RootNamespace>
+    <AssemblyName>TaxServices</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +23,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -43,23 +41,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="sampledata.txt" />
+    <Compile Include="TaxServiceOne.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ReceiptPrinter.Common\ReceiptPrinter.Common.csproj">
       <Project>{043dc04a-f832-40f4-87a2-84ebaf23da88}</Project>
       <Name>ReceiptPrinter.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\TaxServices\TaxServices.csproj">
-      <Project>{581525e7-5e6f-41f6-b5b5-6d396d556fd9}</Project>
-      <Name>TaxServices</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
