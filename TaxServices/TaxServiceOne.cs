@@ -21,7 +21,7 @@ namespace TaxServices
                 {
                     case LineItem lt when lt.ProductDetail.IsImported &&
                         lt.ProductDetail.ProductType == eProductExemptType.none:
-                        lt.TaxPerLine = Math.Ceiling(((BasicTaxRate + ImportTaxRate) / 100 * lt.ProductDetail.Price * lt.Quantity) * 20 ) / 20;
+                            lt.TaxPerLine = Math.Ceiling(((BasicTaxRate + ImportTaxRate) / 100 * lt.ProductDetail.Price * lt.Quantity) * 20 ) / 20;
                             lt.ValuePerLine = (lt.ProductDetail.Price * lt.Quantity) + lt.TaxPerLine;
                             break;
                     case LineItem lt when lt.ProductDetail.IsImported &&

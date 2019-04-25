@@ -10,7 +10,8 @@ namespace ReceiptPrinter.Common
     {
         private readonly ITaxService taxService;
 
-        public IList<Order> Orders { get; set; } 
+        public IList<Order> Orders { get;  } 
+
         public TheReceiptPrinter(ITaxService taxService)
         {
             Orders = new List<Order>();
